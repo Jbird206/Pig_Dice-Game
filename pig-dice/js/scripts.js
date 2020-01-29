@@ -18,7 +18,7 @@ var random = Math.floor(Math.random()*(max - min) + min);
 
 
 $(document).ready(function(){
-    $("#roll").submit(function(){
+    $("#roll").click(function(){
         $("#currentRoll").text(`1`);
     });
     $("form#formOne").submit(function(event){
