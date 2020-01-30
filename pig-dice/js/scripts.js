@@ -1,56 +1,49 @@
 
-
-// Generate random number
-
-var min = parseInt(1);
-var max = parseInt(7);
-var random = Math.floor(Math.random()*(max - min) + min);
-
-
-
-
-
-
-
-
-
-
-
-
 $(document).ready(function(){
-    // $("#roll").click(function(){
-    //     $("#currentRoll").text(`1`);
-    // });
-    // $("form#formOne").submit(function(event){
-    //     event.preventDefault();
-    //    //  Prints result
-    //    var number = $("input#formOne").valueOf();
-        
-    //     var min = parseInt(1);
-    //     var max = parseInt(7);
-    //     var random = Math.floor(Math.random()*(max - min) + min);
-    //     // prints total result(sum)
-    //      $("#result").text(" " + sum + random);
-    //     var sum = parseInt(0);
-    //     for (var i= 0; i<=random; i++){
-    //         if  (i>1 && i <7){
-    //             sum+=i;
-    //             console.log(i);
-    //             console.log(sum);
-    //         } else if (random === 1) {
-    //             console.log(random);
-    //             $(".alert").text("Player 2 turn");
-    //             $(".alert").show();
-    //             sum+=0;
-               
-    //             break;
-                
-    //          } 
-    //     }
-            
-    //     $("#result").text(" " + sum);
-    // });
-//player 2 side
+//Generate random number
+
+// var min = parseInt(1);
+// var max = parseInt(7);
+// var random = Math.floor(Math.random()*(max - min) + min);
+
+var currentTotal1 = 0
+var grandTotal1= 0
+function sumOne(){
+   return Math.floor(Math.random()*(7 - 1) + 1)
+};
+
+function totalScore1(){
+    return grandTotal1 + currentTotal1;
+};
+
+$("form#formOne").submit(function(event){
+    event.preventDefault();
+    var roll1 = sumOne();
+    console.log(roll1)
+    $(".loss1").hide();
+
+        if (roll1 == 1){
+            currentTotal1= 0
+            $(".loss1").show();
+            $(".turn2").show();
+            $(".Turn1").hide();
+            $(".loss2").hide();
+        } else {
+            currentTotal1 += roll1
+        }
+        console.log(roll1+ " roll2")
+        $("#resultOne").html('<br>' + " " + roll1);
+});
+
+$("#holdOne").click(function(event){
+    event.preventDefault();
+    $("#result1").text(totalScore1());
+})
+
+
+
+
+//player 2 side//////////////////////////////////
 var currentTotal = 0;
 var grandTotal = 0;
 function sum(){
@@ -59,17 +52,23 @@ function sum(){
 
 function totalScore() {
    return grandTotal + currentTotal;
-}
+};
+
 
     $("form#formTwo").submit(function(event) {
         // prevents from crashing app
         event.preventDefault();
             var roll = sum();
             console.log(roll)
+            $(".loss2").hide();
         
             if (roll == 1) {
                 console.log("Sorry end of turn")
                 currentTotal = 0;
+                $(".Turn1").show();
+                $(".loss2").show();
+                $(".turn2").hide();
+                $(".loss1").hide();
             } else {
                 currentTotal += roll
                 console.log("currentTotal:" + currentTotal)
@@ -79,9 +78,9 @@ function totalScore() {
     });
     $("#holdTwo").click(function(event) {
         event.preventDefault();
-        //console.log("grandTotal" + totalScore())
+        // callback function: total score
         $("#result2").text(totalScore()); 
     })
-});
 
-    
+
+})

@@ -8,49 +8,107 @@
     <title>Pig-Dice</title>
   </head>
   <body>
-      <div class="container">
+      <div class="container"><br>
+          <div class="jumbotron">
       <h1>Pig-Dice</h1>
       <h3> Click the button below to start the game:</h3>
+    </div>
       <hr>
       <br>
+      <div class="container4">
+        <div class= "container5">
       <h2>Player 1</h2>
       <br>
       <form id="formOne">
-          <div class="form-group">
-              <label for="currentRoll">Current Roll</label>
-              <input id="currentR" type="text">
-        </div>
-        <div class="form-group">
-            <label for="total">Total</label>
-            <input id="total" type="text">
-        </div>
-      <button type="submit" id="roll">Roll</button>
-      <br>
-      <br>
-      <button type="submit">Hold</button>
-
+          <button type="submit">Click</button>
+          <br> 
+        </form>  
+          <br>
+          <p>Your current roll is...<span id="resultOne"></span></p>      
+          <br>
+          <p class="loss1">Sorry, end of turn! :(</p>
+          <p class="Turn1">Your Turn!!</p>
+      <form id="formOne1">
+        <button class="button" id="holdOne" type="submit">Hold and add up your score.</button>
       </form>
-      <h3>Your total score is<span id="result"></span></h3>
-      <br>
-      <h2 class="alert"></h2>
+      <p>Your grand total is ...<span id="result1"></span></p>
+    </div> 
+    </div>
+  </div>
       <hr>
-      <br>
+      <hr>
       <!-- !!!This is where player 2 starts!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+      <div class="container">
       <div class="container2">
+          <div class= "container3">
         <h2>Player 2</h2>
         <br>
         <form id="formTwo">
             <button type="submit">Click</button>
             <br>
             </form>
+            <br>
             <p>Your current roll is...<span id="resultTwo"></span></p>
+            <p class="turn2">Your Turn!!!!</p>
+            <p class="loss2">Sorry, end of your turn! :(</p>
             <br>
         <form id="formTwo2">
-          <button id="holdTwo" type="submit">Hold and add up your score.</button>
+          <button class="button" id="holdTwo" type="submit">Hold and add up your score.</button>
         </form>
         <p>Your grand total is ...<span id="result2"></span></p>
       </div> <!--Container 2 end-->
       </div>
     </div>
+    </div>
+    <!-- ////////////////Dice//////////////////////////// -->
+    <div id="background"></div>
+<div id="wrapper">
+  <div id="platform">
+    <div id="dice">
+      <div class="side front">
+        <div class="dot center"></div>
+      </div>
+      <div class="side front inner"></div>
+      <div class="side top">
+        <div class="dot dtop dleft"></div>
+        <div class="dot dbottom dright"></div>
+      </div>
+      <div class="side top inner"></div>
+      <div class="side right">
+        <div class="dot dtop dleft"></div>
+        <div class="dot center"></div>
+        <div class="dot dbottom dright"></div>
+      </div>
+      <div class="side right inner"></div>
+      <div class="side left">
+        <div class="dot dtop dleft"></div>
+        <div class="dot dtop dright"></div>
+        <div class="dot dbottom dleft"></div>
+        <div class="dot dbottom dright"></div>
+      </div>
+      <div class="side left inner"></div>
+      <div class="side bottom">
+        <div class="dot center"></div>
+        <div class="dot dtop dleft"></div>
+        <div class="dot dtop dright"></div>
+        <div class="dot dbottom dleft"></div>
+        <div class="dot dbottom dright"></div>
+      </div>
+      <div class="side bottom inner"></div>
+      <div class="side back">
+        <div class="dot dtop dleft"></div>
+        <div class="dot dtop dright"></div>
+        <div class="dot dbottom dleft"></div>
+        <div class="dot dbottom dright"></div>
+        <div class="dot center dleft"></div>
+        <div class="dot center dright"></div>
+      </div>
+      <div class="side back inner"></div>
+      <div class="side cover x"></div>
+      <div class="side cover y"></div>
+      <div class="side cover z"></div>
+    </div>
+  </div>
+</div>
   </body>
 </html>
