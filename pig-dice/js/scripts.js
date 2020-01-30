@@ -84,3 +84,43 @@ function totalScore() {
 
 
 })
+////////////////////////////   AI    /////////////////////////////////////////
+var currentTotalAI = 0;
+var grandTotalAI = 0;
+function sumAI(){
+    return Math.floor(Math.random()*(14 - 2) + 2)
+};
+
+function totalScoreAI() {
+   return grandTotalAI + currentTotalAI;
+};
+
+
+    $("form#formAI").submit(function(event) {
+        event.preventDefault();
+            var rollAI = sumAI();
+            console.log(rollAI)
+            $(".lossAI").hide();
+        
+            if (rollAI == 1) {
+                console.log("Terminated")
+                currentTotalAI = 0;
+                // $(".Turn1").show();
+                // $(".loss2").show();
+                // $(".turn2").hide();
+                // $(".loss1").hide();
+            } else {
+                currentTotalAI += rollAI
+                console.log("currentTotal:" + currentTotalAI)
+            }
+        
+        $("#resultAI").html('<br>' + " " + rollAI);
+    });
+    $("#holdAI").click(function(event) {
+        event.preventDefault();
+        // callback function: total score
+        $("#resultAI").text(totalScore()); 
+    })
+
+
+
