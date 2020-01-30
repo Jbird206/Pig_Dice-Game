@@ -79,7 +79,7 @@ function totalScore() {
     });
     $("#holdTwo").click(function(event) {
         event.preventDefault();
-        //console.log("grandTotal" + totalScore())
+        // callback function: total score
         $("#result2").text(totalScore()); 
     })
 });
